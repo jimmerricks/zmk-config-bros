@@ -1,0 +1,26 @@
+# STeMCell board configuration
+
+# Copyright (c) 2022 Bluebell Keyboards
+# SPDX-License-Identifier: MIT
+
+if BOARD_BROS
+
+config BOARD
+	default "bros"
+
+config ZMK_KEYBOARD_NAME
+	default "Bros"
+
+config ZMK_USB
+	default y
+
+config SERIAL
+	default y
+
+config ZMK_KSCAN_MATRIX_POLLING
+	default y
+
+config UART_ASYNC_API
+	default y
+
+endif # BOARD_BROS

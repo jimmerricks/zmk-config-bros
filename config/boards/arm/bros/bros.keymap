@@ -1,0 +1,22 @@
+/*
+ * Copyright (c) 2020 Bluebell Keyboards
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+            bindings = <
+                &kp N1   &kp Q    &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I     &kp O    &kp P    &kp N4
+                &kp N2   &kp A    &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L    &kp SEMI &kp N5
+                &kp N3   &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M    &kp COMMA &kp DOT  &kp FSLH &kp N6
+                                           &kp SPC  &kp TAB  &kp BSPC &kp RET
+            >;
+        };
+    };
+};
