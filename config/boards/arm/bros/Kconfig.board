@@ -5,4 +5,4 @@
 
 config BOARD_BROS
 	bool "Bros"
-	depends on SOC_STM32F401XC
+	depends on SOC_STM32F411XC
