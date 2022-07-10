@@ -23,4 +23,10 @@ config ZMK_KSCAN_MATRIX_POLLING
 config UART_ASYNC_API
 	default y
 
+config BUILD_OUTPUT_UF2_USE_FLASH_BASE
+	default y
+
+config BUILD_OUTPUT_UF2_USE_FLASH_OFFSET
+	default y
+
 endif # BOARD_BROS

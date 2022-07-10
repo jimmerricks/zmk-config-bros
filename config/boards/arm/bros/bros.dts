@@ -5,8 +5,8 @@
  */
 
 /dts-v1/;
-#include <st/f4/stm32f411Xc.dtsi>
-#include <st/f4/stm32f411c(b-c)ux-pinctrl.dtsi>
+#include <st/f4/stm32f411Xe.dtsi>
+#include <st/f4/stm32f411c(c-e)ux-pinctrl.dtsi>
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
@@ -18,8 +18,7 @@
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
 		zephyr,code-partition = &code_partition;
-		zephyr,console = &usart1;
-		zephyr,shell-uart = &usart1;
+		zephyr,console = &cdc_acm_uart;
 		zmk,kscan = &kscan0;
 		zmk,matrix_transform = &transform;
 	};
@@ -73,6 +72,10 @@
 	pinctrl-0 = <&usb_otg_fs_dm_pa11 &usb_otg_fs_dp_pa12>;
 	pinctrl-names = "default";
 	status = "okay";
+	cdc_acm_uart: cdc_acm_uart {
+		compatible = "zephyr,cdc-acm-uart";
+		label = "CDC_ACM_0";
+	};
 };
 
 &rtc {
@@ -93,10 +96,10 @@
 };
 
 &pll {
-	div-m = <8>;
-	mul-n = <384>;
-	div-p = <4>;
-	div-q = <8>;
+	div-m = <4>;
+	mul-n = <96>;
+	div-p = <2>;
+	div-q = <4>;
 	clocks = <&clk_hse>;
 	status = "okay";
 };
@@ -111,6 +114,7 @@
 
 &usart1 {
 	pinctrl-0 = <&usart1_tx_pb6 &usart1_tx_pb6>;
+	pinctrl-names = "default";
 	single-wire;
 	current-speed = <115200>;
 	dmas = <&dma2 7 4 0x28440 0x3  &dma2 2 4 0x28480 0x3>;
@@ -120,6 +124,7 @@
 
 &usart2 {
 	pinctrl-0 = <&usart2_tx_pa2 &usart2_tx_pa2>;
+	pinctrl-names = "default";
 	single-wire;
 	current-speed = <115200>;
 	dmas = <&dma1 6 4 0x28440 0x3  &dma1 5 4 0x28480 0x3>;
