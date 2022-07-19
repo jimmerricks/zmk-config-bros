@@ -13,6 +13,10 @@ CONFIG_PINCTRL=y
 # enable GPIO
 CONFIG_GPIO=y
 
+# enable SPI
+CONFIG_SPI=y
+CONFIG_SPI_STM32=y
+
 # Code partition
 CONFIG_USE_DT_CODE_PARTITION=y
 
